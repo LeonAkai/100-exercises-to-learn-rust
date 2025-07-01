@@ -1,14 +1,21 @@
-// Define a function named `factorial` that, given a non-negative integer `n`,
-// returns `n!`, the factorial of `n`.
+// 非負整数 `n` を受け取り、`n!`（n の階乗）を返す
+// 関数 `factorial` を定義してください。
 //
-// The factorial of `n` is defined as the product of all positive integers up to `n`.
-// For example, `5!` (read "five factorial") is `5 * 4 * 3 * 2 * 1`, which is `120`.
-// `0!` is defined to be `1`.
+// 階乗 `n!` は 1 から `n` までの正の整数をすべて掛け合わせた積です。
+// 例: `5!`（ファイブ・ファクトリアル）は `5 * 4 * 3 * 2 * 1` で `120` になります。
+// `0!` は特別に `1` と定義されています。
 //
-// We expect `factorial(0)` to return `1`, `factorial(1)` to return `1`,
-// `factorial(2)` to return `2`, and so on.
+// したがって `factorial(0)` は `1`、`factorial(1)` は `1`、
+// `factorial(2)` は `2` となります。
 //
-// Use only what you learned! No loops yet, so you'll have to use recursion!
+// まだループは学習していないので、ここでは **再帰** を使って実装しましょう！
+fn factorial(n: u32) -> u32 {
+    if n == 0 {
+        1
+    } else {
+        n * factorial(n - 1)
+    }
+}
 
 #[cfg(test)]
 mod tests {
