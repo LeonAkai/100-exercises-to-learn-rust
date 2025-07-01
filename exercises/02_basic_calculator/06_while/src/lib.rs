@@ -1,10 +1,18 @@
-// Rewrite the factorial function using a `while` loop.
+use std::result;
+
+// `while` ループを使って階乗関数を書き直してください。
 pub fn factorial(n: u32) -> u32 {
-    // The `todo!()` macro is a placeholder that the compiler
-    // interprets as "I'll get back to this later", thus
-    // suppressing type errors.
-    // It panics at runtime.
-    todo!()
+    // `todo!()` マクロはプレースホルダーで、
+    // コンパイラに「後で実装する」ことを伝えて
+    // 一時的に型エラーを抑制します。
+    // ただし実行時には panic します。
+    let mut result = 1;
+    let mut n = n;
+    while n > 0 {
+        result *= n;
+        n -= 1;
+    }
+    result
 }
 
 #[cfg(test)]
