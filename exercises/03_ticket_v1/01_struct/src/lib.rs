@@ -1,10 +1,19 @@
-// Define a struct named `Order` with the following fields:
-// - `price`, an unsigned integer
-// - `quantity`, an unsigned integer
+// `Order` という構造体を定義してください。フィールドは次の 2 つです。
+// - `price`: 符号なし整数
+// - `quantity`: 符号なし整数
 //
-// It should also have a method named `is_available` that returns a `true` if the quantity is
-// greater than 0, otherwise `false`.
+// さらに `is_available` というメソッドを実装し、`quantity` が 0 より大きいとき
+// `true` を返し、そうでなければ `false` を返すようにします。
+struct Order {
+    price: u32,
+    quantity: u32,
+}
 
+impl Order {
+    fn is_available(&self) -> bool {
+        self.quantity > 0
+    }
+}
 #[cfg(test)]
 mod tests {
     use super::*;
